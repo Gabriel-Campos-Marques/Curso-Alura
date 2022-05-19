@@ -80,8 +80,8 @@ object Form2: TForm2
     ParentFont = False
   end
   object lbl_Conexao: TLabel
-    Left = 472
-    Top = 147
+    Left = 512
+    Top = 44
     Width = 6
     Height = 23
     Font.Charset = DEFAULT_CHARSET
@@ -143,9 +143,9 @@ object Form2: TForm2
     ParentFont = False
     TabOrder = 3
   end
-  object Memo1: TMemo
+  object mm_Obs: TMemo
     Left = 192
-    Top = 202
+    Top = 197
     Width = 225
     Height = 89
     Font.Charset = DEFAULT_CHARSET
@@ -185,6 +185,34 @@ object Form2: TForm2
     Font.Style = []
     ParentFont = False
     TabOrder = 6
+  end
+  object Button1: TButton
+    Left = 366
+    Top = 328
+    Width = 51
+    Height = 49
+    Caption = '>'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+  end
+  object Button2: TButton
+    Left = 309
+    Top = 328
+    Width = 51
+    Height = 49
+    Caption = '<'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 8
   end
   object FDConnection1: TFDConnection
     Params.Strings = (

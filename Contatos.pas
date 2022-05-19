@@ -25,11 +25,15 @@ type
     FDConnection1: TFDConnection;
     fdContatos: TFDTable;
     DataSource1: TDataSource;
-    Memo1: TMemo;
+    mm_Obs: TMemo;
     btn_Novo: TButton;
     btn_Salvar: TButton;
     lbl_Conexao: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Atualiza_Campos;
     procedure FormCreate(Sender: TObject);
+
 
   private
     { Private declarations }
@@ -44,21 +48,31 @@ implementation
 
 {$R *.dfm}
 
+procedure TForm2.Atualiza_Campos;
+begin
+  edt_Id.Text       := fdContatos.FieldByName('id').Value;
+  edt_Nome.Text     := fdContatos.FieldByName('nome').Value;
+  edt_Telefone.Text := fdContatos.FieldByName('telefone').Value;
+  edt_Email.Text    := fdContatos.FieldByName('email').Value;
+  mm_Obs.Text       := fdContatos.FieldByName('observacoes').Value;
+
+end;
+
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-  begin
-    FDConnection1.Params.Database := GetCurrentDir + '\contatos.mdb';
-    FDConnection1.Connected := true;
-    fdContatos.TableName := 'Contatos';
-    fdContatos.Active := true;
+  FDConnection1.Params.Database := GetCurrentDir + '\contatos.mdb';
+  FDConnection1.Connected := true;
+  fdContatos.TableName := 'Contatos';
+  fdContatos.Active := true;
 
     if FDConnection1.Connected = true then
-    lbl_Conexao.Caption := 'Conectado'
+      lbl_Conexao.Caption := 'Conectado'
     else
-    lbl_Conexao.Caption := 'Desconectado';
+      lbl_Conexao.Caption := 'Desconectado';
 
-  end;
+  Atualiza_Campos;
+
 end;
 
 end.
