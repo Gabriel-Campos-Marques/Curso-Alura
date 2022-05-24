@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022/05/18 19:42:21.993,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2022/05/18 19:42:39.854,G:\_Github\Delphi\Curso-Alura\Contatos.pas=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2022/05/18 19:42:39.854,G:\_Github\Delphi\Curso-Alura\Contatos.dfm=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
-    <Transaction>2022/05/18 19:43:07.404,G:\_Github\Delphi\Curso-Alura\ProdContatos.dproj=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+	<Transactions>
+    <Transaction>2022/05/18 19:42:21.000.993,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/05/18 19:42:39.000.854,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.pas=G:\_Github\Delphi\Curso-Alura\Contatos.pas</Transaction>
+    <Transaction>2022/05/18 19:42:39.000.854,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit2.dfm=G:\_Github\Delphi\Curso-Alura\Contatos.dfm</Transaction>
+    <Transaction>2022/05/18 19:43:07.000.404,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Project2.dproj=G:\_Github\Delphi\Curso-Alura\ProdContatos.dproj</Transaction>
   </Transactions>
 </BorlandProject>

@@ -191,10 +191,9 @@ object Form2: TForm2
     Font.Style = []
     ParentFont = False
     TabOrder = 6
-    OnClick = btn_SalvarClick
   end
   object Button1: TButton
-    Left = 614
+    Left = 366
     Top = 328
     Width = 51
     Height = 49
@@ -209,7 +208,7 @@ object Form2: TForm2
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 557
+    Left = 309
     Top = 328
     Width = 51
     Height = 49
@@ -223,34 +222,6 @@ object Form2: TForm2
     TabOrder = 8
     OnClick = Button2Click
   end
-  object btn_Editar: TButton
-    Left = 286
-    Top = 328
-    Width = 121
-    Height = 49
-    Caption = 'Editar'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 9
-  end
-  object btn_Excluir: TButton
-    Left = 413
-    Top = 328
-    Width = 122
-    Height = 49
-    Caption = 'Excluir'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 10
-  end
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=G:\_Github\Delphi\Curso-Alura\contatos.mdb'
@@ -259,7 +230,6 @@ object Form2: TForm2
     Top = 352
   end
   object fdContatos: TFDTable
-    BeforePost = fdContatosBeforePost
     Connection = FDConnection1
     Left = 112
     Top = 352
