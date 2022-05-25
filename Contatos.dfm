@@ -16,7 +16,7 @@ object Form2: TForm2
   TextHeight = 13
   object Label1: TLabel
     Left = 32
-    Top = 202
+    Top = 178
     Width = 143
     Height = 25
     Caption = 'OBSERVA'#199#213'ES'
@@ -29,7 +29,7 @@ object Form2: TForm2
   end
   object Label2: TLabel
     Left = 32
-    Top = 42
+    Top = 18
     Width = 22
     Height = 25
     Caption = 'ID'
@@ -42,7 +42,7 @@ object Form2: TForm2
   end
   object Label3: TLabel
     Left = 32
-    Top = 82
+    Top = 58
     Width = 57
     Height = 25
     Caption = 'NOME'
@@ -55,7 +55,7 @@ object Form2: TForm2
   end
   object Label4: TLabel
     Left = 32
-    Top = 122
+    Top = 98
     Width = 98
     Height = 25
     Caption = 'TELEFONE'
@@ -68,7 +68,7 @@ object Form2: TForm2
   end
   object Label5: TLabel
     Left = 32
-    Top = 162
+    Top = 138
     Width = 67
     Height = 25
     Caption = 'E-MAIL'
@@ -81,7 +81,7 @@ object Form2: TForm2
   end
   object lbl_Conexao: TLabel
     Left = 512
-    Top = 44
+    Top = 20
     Width = 6
     Height = 23
     Font.Charset = DEFAULT_CHARSET
@@ -93,7 +93,7 @@ object Form2: TForm2
   end
   object edt_Id: TEdit
     Left = 192
-    Top = 44
+    Top = 20
     Width = 225
     Height = 33
     Enabled = False
@@ -107,7 +107,7 @@ object Form2: TForm2
   end
   object edt_Nome: TEdit
     Left = 192
-    Top = 83
+    Top = 59
     Width = 225
     Height = 31
     Enabled = False
@@ -121,7 +121,7 @@ object Form2: TForm2
   end
   object edt_Telefone: TEdit
     Left = 192
-    Top = 120
+    Top = 96
     Width = 225
     Height = 31
     Enabled = False
@@ -135,7 +135,7 @@ object Form2: TForm2
   end
   object edt_Email: TEdit
     Left = 192
-    Top = 160
+    Top = 136
     Width = 225
     Height = 31
     Enabled = False
@@ -149,7 +149,7 @@ object Form2: TForm2
   end
   object mm_Obs: TMemo
     Left = 192
-    Top = 197
+    Top = 173
     Width = 225
     Height = 89
     Enabled = False
@@ -164,8 +164,8 @@ object Form2: TForm2
     TabOrder = 4
   end
   object btn_Novo: TButton
-    Left = 32
-    Top = 328
+    Left = 8
+    Top = 296
     Width = 121
     Height = 49
     Caption = 'Novo'
@@ -179,8 +179,8 @@ object Form2: TForm2
     OnClick = btn_NovoClick
   end
   object btn_Salvar: TButton
-    Left = 159
-    Top = 328
+    Left = 135
+    Top = 296
     Width = 121
     Height = 49
     Caption = 'Salvar'
@@ -194,8 +194,8 @@ object Form2: TForm2
     OnClick = btn_SalvarClick
   end
   object Button1: TButton
-    Left = 614
-    Top = 328
+    Left = 70
+    Top = 352
     Width = 51
     Height = 49
     Caption = '>'
@@ -209,8 +209,8 @@ object Form2: TForm2
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 557
-    Top = 328
+    Left = 13
+    Top = 352
     Width = 51
     Height = 49
     Caption = '<'
@@ -224,8 +224,8 @@ object Form2: TForm2
     OnClick = Button2Click
   end
   object btn_Editar: TButton
-    Left = 286
-    Top = 328
+    Left = 390
+    Top = 296
     Width = 121
     Height = 49
     Caption = 'Editar'
@@ -236,10 +236,11 @@ object Form2: TForm2
     Font.Style = []
     ParentFont = False
     TabOrder = 9
+    OnClick = btn_EditarClick
   end
   object btn_Excluir: TButton
-    Left = 413
-    Top = 328
+    Left = 262
+    Top = 296
     Width = 122
     Height = 49
     Caption = 'Excluir'
@@ -250,6 +251,79 @@ object Form2: TForm2
     Font.Style = []
     ParentFont = False
     TabOrder = 10
+    OnClick = btn_ExcluirClick
+  end
+  object btn_Cancelar: TButton
+    Left = 517
+    Top = 296
+    Width = 59
+    Height = 49
+    Caption = 'X'
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 11
+    OnClick = btn_CancelarClick
+  end
+  object edt_Procura: TEdit
+    Left = 455
+    Top = 18
+    Width = 186
+    Height = 31
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 12
+  end
+  object btn_Procurar: TButton
+    Left = 455
+    Top = 55
+    Width = 186
+    Height = 50
+    Caption = 'Procurar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 13
+    OnClick = btn_ProcurarClick
+  end
+  object mm_Relatorio: TMemo
+    Left = 456
+    Top = 111
+    Width = 185
+    Height = 89
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 14
+  end
+  object btn_Relatorio: TButton
+    Left = 455
+    Top = 206
+    Width = 185
+    Height = 60
+    Caption = 'Relat'#243'rio'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 15
+    OnClick = btn_RelatorioClick
   end
   object FDConnection1: TFDConnection
     Params.Strings = (

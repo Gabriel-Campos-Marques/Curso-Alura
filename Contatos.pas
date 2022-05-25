@@ -33,6 +33,11 @@ type
     Button2: TButton;
     btn_Editar: TButton;
     btn_Excluir: TButton;
+    btn_Cancelar: TButton;
+    edt_Procura: TEdit;
+    btn_Procurar: TButton;
+    mm_Relatorio: TMemo;
+    btn_Relatorio: TButton;
     procedure limpa_Campos;
     procedure bloqueia_desbloqueia_campos;
     procedure Atualiza_Campos;
@@ -42,6 +47,11 @@ type
     procedure btn_NovoClick(Sender: TObject);
     procedure btn_SalvarClick(Sender: TObject);
     procedure fdContatosBeforePost(DataSet: TDataSet);
+    procedure btn_ExcluirClick(Sender: TObject);
+    procedure btn_EditarClick(Sender: TObject);
+    procedure btn_CancelarClick(Sender: TObject);
+    procedure btn_ProcurarClick(Sender: TObject);
+    procedure btn_RelatorioClick(Sender: TObject);
 
 
 
@@ -54,6 +64,8 @@ type
 
 var
   Form2: TForm2;
+  estado: Integer;
+  numero_registros: Integer;
 
 implementation
 
@@ -85,6 +97,7 @@ begin
   edt_Telefone.Enabled := not edt_Telefone.Enabled;
   edt_Email.Enabled    := not edt_Email.Enabled;
   mm_Obs.Enabled       := not mm_Obs.Enabled;
+  btn_Cancelar.Enabled := not btn_Cancelar.Enabled;
 end;
 
 procedure TForm2.limpa_Campos;
@@ -100,12 +113,68 @@ begin
 end;
 
 
+procedure TForm2.btn_CancelarClick(Sender: TObject);
+begin
+  limpa_Campos;
+
+  if estado = 1 then
+    begin
+      fdContatos.Prior;
+    end;
+
+  Atualiza_Campos;
+  bloqueia_desbloqueia_campos;
+  estado := 0;
+end;
+
+procedure TForm2.btn_EditarClick(Sender: TObject);
+begin
+  bloqueia_desbloqueia_campos;
+  fdContatos.Edit;
+end;
+
+procedure TForm2.btn_ExcluirClick(Sender: TObject);
+begin
+  fdContatos.Delete;
+  Atualiza_Campos;
+end;
+
 procedure TForm2.btn_NovoClick(Sender: TObject);
 begin
   fdContatos.Insert;
   bloqueia_desbloqueia_campos;
   limpa_Campos;
 
+  estado := 1;
+
+end;
+
+procedure TForm2.btn_ProcurarClick(Sender: TObject);
+begin
+  if fdContatos.FindKey([edt_Procura.Text]) then
+  begin
+    Atualiza_Campos;
+  end
+  else
+  begin
+    ShowMessage('Não encontrado');
+  end;
+end;
+
+procedure TForm2.btn_RelatorioClick(Sender: TObject);
+begin
+  fdContatos.First;
+  numero_registros := 0;
+
+  while not fdContatos.Eof do
+  begin
+    mm_Relatorio.Lines.Add(IntToStr(fdContatos.FieldByName('id').Value)+ ' '
+                            + fdContatos.FieldByName('nome').Value);
+    fdContatos.Next;
+    numero_registros := numero_registros + 1;
+  end;
+
+  mm_Relatorio.Lines.Add('Temos ' + IntToStr(numero_registros) + ' registros');
 end;
 
 procedure TForm2.btn_SalvarClick(Sender: TObject);
