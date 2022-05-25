@@ -9,7 +9,8 @@ uses
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef, FireDAC.VCLUI.Wait, Data.DB,
   FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, FireDAC.Comp.DataSet;
+  FireDAC.DApt, FireDAC.Comp.DataSet, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls;
 
 type
   TForm2 = class(TForm)
@@ -38,6 +39,11 @@ type
     btn_Procurar: TButton;
     mm_Relatorio: TMemo;
     btn_Relatorio: TButton;
+    DBGrid1: TDBGrid;
+    btn_Fechar: TButton;
+    img_Foto: TImage;
+    OpenDialog1: TOpenDialog;
+    btn_BuscarFoto: TButton;
     procedure limpa_Campos;
     procedure bloqueia_desbloqueia_campos;
     procedure Atualiza_Campos;
@@ -52,6 +58,9 @@ type
     procedure btn_CancelarClick(Sender: TObject);
     procedure btn_ProcurarClick(Sender: TObject);
     procedure btn_RelatorioClick(Sender: TObject);
+    procedure btn_FecharClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure btn_BuscarFotoClick(Sender: TObject);
 
 
 
@@ -112,6 +121,12 @@ begin
   edt_Nome.SetFocus;
 end;
 
+
+procedure TForm2.btn_BuscarFotoClick(Sender: TObject);
+begin
+  OpenDialog1.Execute();
+  img_Foto.Picture.LoadFromFile(OpenDialog1.FileName);
+end;
 
 procedure TForm2.btn_CancelarClick(Sender: TObject);
 begin
@@ -193,6 +208,16 @@ end;
 procedure TForm2.Button2Click(Sender: TObject);
 begin
   fdContatos.Prior;
+  Atualiza_Campos;
+end;
+
+procedure TForm2.btn_FecharClick(Sender: TObject);
+begin
+  Form2.Close;
+end;
+
+procedure TForm2.DBGrid1DblClick(Sender: TObject);
+begin
   Atualiza_Campos;
 end;
 
