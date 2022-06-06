@@ -97,6 +97,20 @@ begin
       mm_Obs.Text := fdContatos.FieldByName('observacoes').Value;
     end;
 
+  if fdContatos.FieldByName('foto').Value <> null then
+
+    begin
+      if FileExists(fdContatos.FieldByName('foto').Value) = True then
+        begin
+          img_Foto.Picture.LoadFromFile(fdContatos.FieldByName('foto').Value);
+        end;
+
+    end
+  else
+    begin
+      img_Foto.Picture := nil;
+    end;
+
 end;
 
 procedure TForm2.bloqueia_desbloqueia_campos;
@@ -126,6 +140,10 @@ procedure TForm2.btn_BuscarFotoClick(Sender: TObject);
 begin
   OpenDialog1.Execute();
   img_Foto.Picture.LoadFromFile(OpenDialog1.FileName);
+  fdContatos.FieldByName('foto').Value := OpenDialog1.FileName;
+  fdContatos.Post;
+  Atualiza_Campos;
+
 end;
 
 procedure TForm2.btn_CancelarClick(Sender: TObject);

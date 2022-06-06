@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 406
-  ClientWidth = 969
+  ClientHeight = 609
+  ClientWidth = 1122
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -92,10 +92,10 @@ object Form2: TForm2
     ParentFont = False
   end
   object img_Foto: TImage
-    Left = 631
-    Top = 16
-    Width = 162
-    Height = 122
+    Left = 591
+    Top = 272
+    Width = 178
+    Height = 266
     ParentShowHint = False
     Picture.Data = {
       0A544A504547496D616765B5FF0C00FFD8FFE000104A46494600010101006000
@@ -26798,7 +26798,7 @@ object Form2: TForm2
   end
   object btn_Novo: TButton
     Left = 8
-    Top = 296
+    Top = 489
     Width = 121
     Height = 49
     Caption = 'Novo'
@@ -26813,7 +26813,7 @@ object Form2: TForm2
   end
   object btn_Salvar: TButton
     Left = 135
-    Top = 296
+    Top = 489
     Width = 121
     Height = 49
     Caption = 'Salvar'
@@ -26828,7 +26828,7 @@ object Form2: TForm2
   end
   object Button1: TButton
     Left = 70
-    Top = 352
+    Top = 545
     Width = 51
     Height = 49
     Caption = '>'
@@ -26843,7 +26843,7 @@ object Form2: TForm2
   end
   object Button2: TButton
     Left = 13
-    Top = 352
+    Top = 545
     Width = 51
     Height = 49
     Caption = '<'
@@ -26858,7 +26858,7 @@ object Form2: TForm2
   end
   object btn_Editar: TButton
     Left = 390
-    Top = 296
+    Top = 489
     Width = 121
     Height = 49
     Caption = 'Editar'
@@ -26873,7 +26873,7 @@ object Form2: TForm2
   end
   object btn_Excluir: TButton
     Left = 262
-    Top = 296
+    Top = 489
     Width = 122
     Height = 49
     Caption = 'Excluir'
@@ -26888,7 +26888,7 @@ object Form2: TForm2
   end
   object btn_Cancelar: TButton
     Left = 517
-    Top = 296
+    Top = 489
     Width = 59
     Height = 49
     Caption = 'X'
@@ -26947,7 +26947,7 @@ object Form2: TForm2
     Left = 439
     Top = 206
     Width = 185
-    Height = 60
+    Height = 56
     Caption = 'Relat'#243'rio'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -26959,10 +26959,10 @@ object Form2: TForm2
     OnClick = btn_RelatorioClick
   end
   object DBGrid1: TDBGrid
-    Left = 632
-    Top = 144
-    Width = 320
-    Height = 120
+    Left = 15
+    Top = 272
+    Width = 558
+    Height = 202
     DataSource = DataSource1
     TabOrder = 16
     TitleFont.Charset = DEFAULT_CHARSET
@@ -26973,8 +26973,8 @@ object Form2: TForm2
     OnDblClick = DBGrid1DblClick
   end
   object btn_Fechar: TButton
-    Left = 866
-    Top = 16
+    Left = 1026
+    Top = 9
     Width = 88
     Height = 48
     Caption = 'FECHAR'
@@ -26988,8 +26988,8 @@ object Form2: TForm2
     OnClick = btn_FecharClick
   end
   object btn_BuscarFoto: TButton
-    Left = 799
-    Top = 80
+    Left = 663
+    Top = 208
     Width = 75
     Height = 58
     Caption = 'Buscar'
@@ -27007,21 +27007,21 @@ object Form2: TForm2
       'Database=G:\_Github\Delphi\Curso-Alura\contatos.mdb'
       'DriverID=MSAcc')
     Left = 40
-    Top = 352
+    Top = 545
   end
   object fdContatos: TFDTable
     BeforePost = fdContatosBeforePost
     Connection = FDConnection1
     Left = 112
-    Top = 352
+    Top = 545
   end
   object DataSource1: TDataSource
     DataSet = fdContatos
     Left = 176
-    Top = 352
+    Top = 545
   end
   object OpenDialog1: TOpenDialog
     Left = 240
-    Top = 352
+    Top = 545
   end
 end
